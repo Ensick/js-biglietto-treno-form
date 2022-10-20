@@ -6,12 +6,34 @@ a{
 
 main{
     height: 100vh;
+    background-image: url(../img/inside-trains-station.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .ms-bg-red{
     background-color: #B91450;
 }
 
+.ms-btn-gray{
+    background-color: lightgray;
+    color: #BD225A;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 1px solid gray;
+}
+
+.color-pink{
+    color:  #BD225A;
+}
+
 .ms-bg-white{
     background-color: white;
 }
+
+.ms-bg-gray{
+    background-color: lightgray;
+}
+

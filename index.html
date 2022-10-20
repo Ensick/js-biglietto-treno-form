@@ -12,67 +12,71 @@
 
     <main class="d-flex justify-content-center align-items-center">
 
-        <div class="ms-bg-red py-4 px-5 rounded-4">
+        <div class="ms-bg-red py-4 px-5 rounded-5">
 
             <h2 class="text-center text-white mb-3">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
 
-            <section class="ms-bg-white rounded-4 mb-3 py-2 px-1">
+            <section class="ms-bg-white rounded-4 mb-3 py-4 px-5">
     
-                <div class="d-flex justify-content-between text-center mb-3">
+                <div class="d-flex justify-content-between text-center mb-5">
+                    
                     <div>
-                        <h5 class="mb-2">Nome e Cognome</h5>
+                        <h5 class="mb-2 color-pink">Nome e Cognome</h5>
                         <input id="nome" type="text">
                     </div>
     
                     <div>
-                        <h5 class="mb-2">Km da percorrere</h5>
+                        <h5 class="mb-2 color-pink">Km da percorrere</h5>
                         <input id="km" type="text">
                     </div>
     
                     <div>
-                        <h5 class="mb-2">Fascia d'età</h5>
+                        <h5 class="mb-2 color-pink">Fascia d'età</h5>
                         <input id="eta" type="text">
                     </div>
                 </div>
     
                 <div class="text-center">
-                    <button onclick="compilazione(); return false">Genera</button>
-                    <button> <a href="">Annulla</a> </button>
+                    <button class="ms-btn-gray" onclick="compilazione(); return false">Genera</button>
+                    <button class="ms-3 ms-btn-gray"> <a href="">Annulla</a> </button>
                 </div>
     
             </section>
 
              <h2 class="text-center text-white mb-3">IL TUO BIGLIETTO</h2>
     
-            <section class="ms-bg-white py-4 px-5 rounded-4">
+            <section class="ms-bg-white py-4 px-3 rounded-4">
                 
+                <h4>Dettaglio passegeri</h4>
+
                 <div class="d-flex">
     
-                    <div class="">
-                        <h3>NOME PASSEGGERO</h3>
+                    <div class="ms-bg-gray p-3">
+                        <h3 class="mb-4">NOME PASSEGGERO</h3>
                         <h4 id="identita"></h4>
                     </div>
     
-                    <div class="d-flex ps-2">
+                    <div class="d-flex justify-content-between ps-2 border-top border-bottom
+                    py-3">
     
                         <div class="mx-2">
-                           <h5>Offerta</h5>
+                           <h5 class="mb-5">Offerta</h5>
                            <span id="offerta"></span>
                         </div>
     
-                        <div class="mx-2">
-                            <h5>Carrozza</h5>
+                        <div class="mx-2 text-center">
+                            <h5 class="mb-5">Carrozza</h5>
                             <span id="carrozza"></span>
                         </div>
     
-                        <div class="mx-2">
-                            <h5>Codice Cp</h5>
+                        <div class="mx-2 text-center">
+                            <h5 class="mb-5">Codice Cp</h5>
                             <span id="codice"></span>
                         </div>
     
-                        <div class="mx-2">
-                            <h5>Costo Biglietto</h5>
-                            <span id="costo"></span>
+                        <div class="mx-2 text-center">
+                            <h5 class="mb-5">Costo Biglietto</h5>
+                            <span id="costo" ></span>
                         </div>
                         
                     </div>
