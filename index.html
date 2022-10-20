@@ -5,77 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-biglietto-treno-form</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
-    <main>
+    <main class="d-flex justify-content-center align-items-center">
 
-        <section>
+        <div class="ms-bg-red py-4 px-5 rounded-4">
 
-            <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+            <h2 class="text-center text-white mb-3">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
 
-            <div>
-                <div>
-                    <h4>Nome e Cognome</h4>
-                    <input id="nome" type="text">
-                </div>
-
-                <div>
-                    <h4>Km da percorrere</h4>
-                    <input id="km" type="text">
-                </div>
-
-                <div>
-                    <h4>Fascia d'età</h4>
-                    <input id="eta" type="text">
-                </div>
-            </div>
-
-            <div>
-                <button onclick="compilazione(); return false">Genera</button>
-                <button>Annulla</button>
-            </div>
-
-        </section>
-
-        <section>
-            
-            <div>
-
-                <h2>IL TUO BIGLIETTO</h2>
-
-                <div>
-                    <h3>NOME PASSEGGERO</h3>
-                    <h4 id="identita"></h4>
-                </div>
-
-                <div>
-
+            <section class="ms-bg-white rounded-4 mb-3 py-2 px-1">
+    
+                <div class="d-flex justify-content-between text-center mb-3">
                     <div>
-                       <h4>Offerta</h4>
-                       <span id="offerta"></span>
+                        <h5 class="mb-2">Nome e Cognome</h5>
+                        <input id="nome" type="text">
                     </div>
-
+    
                     <div>
-                        <h4>Carrozza</h4>
+                        <h5 class="mb-2">Km da percorrere</h5>
+                        <input id="km" type="text">
                     </div>
-
+    
                     <div>
-                        <h4>Codice Cp</h4>
+                        <h5 class="mb-2">Fascia d'età</h5>
+                        <input id="eta" type="text">
                     </div>
-
-                    <div>
-                        <h4>Costo Biglietto</h4>
-                        <span id="costo"></span>
-                    </div>
-                    
                 </div>
+    
+                <div class="text-center">
+                    <button onclick="compilazione(); return false">Genera</button>
+                    <button> <a href="">Annulla</a> </button>
+                </div>
+    
+            </section>
 
-            </div>
+             <h2 class="text-center text-white mb-3">IL TUO BIGLIETTO</h2>
+    
+            <section class="ms-bg-white py-4 px-5 rounded-4">
+                
+                <div class="d-flex">
+    
+                    <div class="">
+                        <h3>NOME PASSEGGERO</h3>
+                        <h4 id="identita"></h4>
+                    </div>
+    
+                    <div class="d-flex ps-2">
+    
+                        <div class="mx-2">
+                           <h5>Offerta</h5>
+                           <span id="offerta"></span>
+                        </div>
+    
+                        <div class="mx-2">
+                            <h5>Carrozza</h5>
+                            <span id="carrozza"></span>
+                        </div>
+    
+                        <div class="mx-2">
+                            <h5>Codice Cp</h5>
+                            <span id="codice"></span>
+                        </div>
+    
+                        <div class="mx-2">
+                            <h5>Costo Biglietto</h5>
+                            <span id="costo"></span>
+                        </div>
+                        
+                    </div>
+    
+                </div>
+    
+            </section>
 
-        </section>
+        </div>
+
+        
 
     </main>
     

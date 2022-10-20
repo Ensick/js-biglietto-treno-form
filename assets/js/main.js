@@ -30,24 +30,33 @@ function compilazione(){
     
     let nomeCognome = document.getElementById("nome").value;
 
+    let carrozza = Math.floor(Math.random() * 10 + 1 );
+
+    let codice = Math.floor(Math.random() * 1000 + 1 );
+
+
     document.getElementById("identita").innerHTML = (nomeCognome)
     
     if (eta < 18 ){
      
         prezzoBiglietto = parseFloat(chilometri * tariffaChilometro - minorenne).toFixed(2);
-        
+
         offerta.innerHTML = `Biglietto scontato del 20%`;
     
     } else if( eta >= 65){
     
         prezzoBiglietto =  parseFloat(chilometri * tariffaChilometro - maggiorenne).toFixed(2);
-        
+
         offerta.innerHTML = `Biglietto scontato del 40%`;
 
     } else {
 
         offerta.innerHTML = `Biglietto standard`;
     }
+
+    document.getElementById("carrozza").innerHTML = (carrozza)
+
+    document.getElementById("codice").innerHTML = (codice)
     
     document.getElementById("costo").innerHTML = (prezzoBiglietto);
 
