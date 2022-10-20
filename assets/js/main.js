@@ -16,15 +16,15 @@ function compilazione(){
 
     let chilometri = document.getElementById("km").value;
 
-    let eta = document.getElementById("eta").value;
+    let etaPersona = parseInt(document.getElementById("eta").value);
     
     const tariffaChilometro = 0.21;
     
     let prezzoBiglietto = parseFloat(chilometri * tariffaChilometro).toFixed(2);
     
-    let minorenne = ( prezzoBiglietto / 100 ) * 20;
+    let sconto20 = (prezzoBiglietto / 100 ) * 20;
     
-    let maggiorenne = (prezzoBiglietto / 100) * 40;
+    let sconto40 = (prezzoBiglietto / 100) * 40;
 
     let offerta = document.getElementById("offerta");
     
@@ -37,21 +37,26 @@ function compilazione(){
 
     document.getElementById("identita").innerHTML = (nomeCognome)
     
-    if (eta < 18 ){
+    if (etaPersona === 1){
      
-        prezzoBiglietto = parseFloat(chilometri * tariffaChilometro - minorenne).toFixed(2);
+        prezzoBiglietto = parseFloat(chilometri * tariffaChilometro - sconto20).toFixed(2);
 
         offerta.innerHTML = `Biglietto scontato del 20%`;
+
+        console.log("ciao1")
     
-    } else if( eta >= 65){
+    } else if(etaPersona === 3){
     
-        prezzoBiglietto =  parseFloat(chilometri * tariffaChilometro - maggiorenne).toFixed(2);
+        prezzoBiglietto =  parseFloat(chilometri * tariffaChilometro - sconto40).toFixed(2);
 
         offerta.innerHTML = `Biglietto scontato del 40%`;
 
+        console.log("ciao2")
     } else {
 
         offerta.innerHTML = `Biglietto standard`;
+
+        console.log("ciao3")
     }
 
     document.getElementById("carrozza").innerHTML = (carrozza)
