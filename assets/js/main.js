@@ -11,3 +11,45 @@
 // MILESTONE 2:
 // Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
 // Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
+
+function compilazione(){
+
+    let chilometri = document.getElementById("km").value;
+
+    let eta = document.getElementById("eta").value;
+    
+    const tariffaChilometro = 0.21;
+    
+    let prezzoBiglietto = parseFloat(chilometri * tariffaChilometro).toFixed(2);
+    
+    let minorenne = ( prezzoBiglietto / 100 ) * 20;
+    
+    let maggiorenne = (prezzoBiglietto / 100) * 40;
+
+    let offerta = document.getElementById("offerta");
+    
+    let nomeCognome = document.getElementById("nome").value;
+
+    document.getElementById("identita").innerHTML = (nomeCognome)
+    
+    if (eta < 18 ){
+     
+        prezzoBiglietto = parseFloat(chilometri * tariffaChilometro - minorenne).toFixed(2);
+        
+        offerta.innerHTML = `Biglietto scontato del 20%`;
+    
+    } else if( eta >= 65){
+    
+        prezzoBiglietto =  parseFloat(chilometri * tariffaChilometro - maggiorenne).toFixed(2);
+        
+        offerta.innerHTML = `Biglietto scontato del 40%`;
+
+    } else {
+
+        offerta.innerHTML = `Biglietto standard`;
+    }
+    
+    document.getElementById("costo").innerHTML = (prezzoBiglietto);
+
+}
+
