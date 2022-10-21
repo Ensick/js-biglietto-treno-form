@@ -12,58 +12,80 @@
 // Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
 // Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
+
+
+
+
+const tariffaChilometro = 0.21;
+
+
+
+
+
 function compilazione(){
 
     let chilometri = document.getElementById("km").value;
 
     let etaPersona = parseInt(document.getElementById("eta").value);
-    
-    const tariffaChilometro = 0.21;
-    
+
+    let nomeCognome = document.getElementById("nome").value;
+
     let prezzoBiglietto = parseFloat(chilometri * tariffaChilometro).toFixed(2);
-    
+
     let sconto20 = (prezzoBiglietto / 100 ) * 20;
-    
+
     let sconto40 = (prezzoBiglietto / 100) * 40;
 
     let offerta = document.getElementById("offerta");
-    
-    let nomeCognome = document.getElementById("nome").value;
-
-    let carrozza = Math.floor(Math.random() * 10 + 1 );
-
-    let codice = Math.floor(Math.random() * 1000 + 1 );
 
 
-    document.getElementById("identita").innerHTML = (nomeCognome)
-    
-    if (etaPersona === 1){
-     
-        prezzoBiglietto = parseFloat(chilometri * tariffaChilometro - sconto20).toFixed(2);
 
-        offerta.innerHTML = `Biglietto scontato del 20%`;
+    if(chilometri == "" || etaPersona == "" || nomeCognome == ""){
 
-        console.log("ciao1")
-    
-    } else if(etaPersona === 3){
-    
-        prezzoBiglietto =  parseFloat(chilometri * tariffaChilometro - sconto40).toFixed(2);
+        console.log("compila tutto!!")
+        
+    } else{
+         
+        if (etaPersona === 1){
+        
+            prezzoBiglietto = parseFloat(chilometri * tariffaChilometro - sconto20).toFixed(2);
 
-        offerta.innerHTML = `Biglietto scontato del 40%`;
+            offerta.innerHTML = `Biglietto scontato del 20%`;
 
-        console.log("ciao2")
-    } else {
+            console.log("ciao1")
+        
+        } else if(etaPersona === 3){
+        
+            prezzoBiglietto =  parseFloat(chilometri * tariffaChilometro - sconto40).toFixed(2);
 
-        offerta.innerHTML = `Biglietto standard`;
+            offerta.innerHTML = `Biglietto scontato del 40%`;
 
-        console.log("ciao3")
+            console.log("ciao2")
+        } else {
+
+            offerta.innerHTML = `Biglietto standard`;
+
+            console.log("ciao3")
+        }
+
+        let carrozza = Math.floor(Math.random() * 10 + 1 );
+
+        let codice = Math.floor(Math.random() * 1000 + 1 );
+
+
+        document.getElementById("identita").innerHTML = (nomeCognome)
+
+        document.getElementById("carrozza").innerHTML = (carrozza)
+
+        document.getElementById("codice").innerHTML = (codice)
+        
+        document.getElementById("costo").innerHTML = (prezzoBiglietto);
+
     }
 
-    document.getElementById("carrozza").innerHTML = (carrozza)
-
-    document.getElementById("codice").innerHTML = (codice)
+   
     
-    document.getElementById("costo").innerHTML = (prezzoBiglietto);
 
+    
 }
 
